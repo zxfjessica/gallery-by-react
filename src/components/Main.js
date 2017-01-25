@@ -4,14 +4,28 @@ require('styles/App.css');
 import React from 'react';
 
 let yeomanImage = require('../images/yeoman.png');
-
+let imgData = require('json!../data/imgdata.json');
+//转化为路径信息
+imgData =( function imgGene(imgDataArr){
+	
+	for(var i=0;i<imgDataArr.length;i++){
+		var imgDataItem = imgDataArr[i];
+		imgDataItem.img = require('../images/'+(i+1)+'.png');
+		imgDataArr[i] = imgDataItem;
+	}
+	return imgDataArr;
+})(imgData);
 class AppComponent extends React.Component {
   render() {
     return (
-      <div className="index">
-        <img src={yeomanImage} alt="Yeoman Generator" />
-        <div className="notice">Please edit <code>src/components/Main.js</code> to get started!</div>
-      </div>
+      <section className="stage">
+      	<section>
+      		xianshi 
+      	</section>
+      	<nav>
+
+      	</nav>
+      </section>
     );
   }
 }
